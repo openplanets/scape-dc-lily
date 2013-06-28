@@ -1,0 +1,111 @@
+{
+  namespaces: {
+    /* Declaration of namespace prefixes. */
+    "eu.scapeproject.lily": "s"
+  },
+  fieldTypes: [
+    {
+      name: "s$DescriptiveMD",
+      valueType: "BLOB",
+      scope: "versioned"
+    },
+    {
+      name: "s$filename",
+      valueType: "STRING",
+      scope: "versioned"
+    },
+    {
+      name: "s$mimetype",
+      valueType: "STRING",
+      scope: "versioned"
+    },
+    {
+      name: "s$uri",
+      valueType: "URI",
+      scope: "versioned"
+    },
+    {
+      name: "s$title",
+      valueType: "STRING",
+      scope: "versioned"
+    },
+    {
+      name: "s$usage",
+      valueType: "STRING",
+      scope: "versioned"
+    },
+    {
+      name: "s$techMD",
+      valueType: "BLOB",
+      scope: "versioned"
+    },
+    {
+      name: "s$rightsMD",
+      valueType: "BLOB",
+      scope: "versioned"
+    },
+    {
+      name: "s$sourceMD",
+      valueType: "BLOB",
+      scope: "versioned"
+    },
+    {
+      name: "s$provenanceMD",
+      valueType: "BLOB",
+      scope: "versioned"
+    },
+    {
+      name: "s$Representations",
+      valueType: "LIST<LINK<s$Representation>>",
+      scope: "versioned"
+    },
+    {
+      name: "s$Files",
+      valueType: "LIST<LINK<s$File>>",
+      scope: "versioned"
+    },
+    {
+      name: "s$Bitstreams",
+      valueType: "LIST<LINK<s$Bitstream>>",
+      scope: "versioned"
+    }
+  ],
+  recordTypes: [
+    {
+      name: "s$IntellectualEntity",
+      fields: [
+        {name: "s$DescriptiveMD", mandatory: false },
+        {name: "s$Representations", mandatory: false }
+      ]
+    },
+    {
+      name: "s$Representation",
+      fields: [
+        {name: "s$title", mandatory: false },
+        {name: "s$usage", mandatory: false },
+        {name: "s$techMD", mandatory: false },
+        {name: "s$rightsMD", mandatory: false },
+        {name: "s$sourceMD", mandatory: false },
+        {name: "s$provenanceMD", mandatory: false },
+        {name: "s$Files", mandatory: false }
+      ]
+    },
+    {
+      name: "s$File",
+      fields: [
+        {name: "s$filename", mandatory: false },
+        {name: "s$mimetype", mandatory: false },
+        {name: "s$uri", mandatory: false },
+        {name: "s$techMD", mandatory: false },
+        {name: "s$Bitstreams", mandatory: false }
+      ]
+    },
+    {
+      name: "s$Bitstream",
+      fields: [
+        {name: "s$title", mandatory: false },
+        {name: "s$techMD", mandatory: false }
+      ]
+    }
+  ]
+}

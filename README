@@ -1,0 +1,53 @@
+Lily Data Connector Service
+===========================
+This is a partial implementation of the SCAPE RESTful Data Connector API for a Lily repository (http://www.lilyproject.org/).
+
+Requirements
+============
+Java 1.7
+maven 2.0
+Lily 2.0
+This code has only been tested on Linux
+
+Installation
+============
+Clone this project locally to {dc-lily-home}
+
+Configure the application here:
+  {dc-lily-home}/WebContent/WEB-INF/web.xml
+Set the REST endpoint with <url-pattern> tag; default is /*
+
+  {dc-lily-home}/src/properties.config
+Configure the thread pool here. Do not change the lily endpoint if you are working with the test version
+
+Build the dc-lily .war file:
+  mvn war:war
+
+Download the Lily 2.0 distribution from http://www.lilyproject.org/lily/ext/showdoc/567-lily
+
+Start the test Lily instance (includes Lily, Hadoop, Zookeeper, and Solr):
+  {lily-home}/lily-2.0/bin/launch-test-lily
+
+Add the SCAPE Data Model to Lily:
+  {lily-home}/lily-2.0/bin/lily-import {dc-lily-home}/dc-lily/scape_model.json
+
+Deploy the dc-lily .war file to an application server (tested with Tomcat7) and start.
+NOTE: the application will fail if the Lily instance is not started
+NOTE: be sure that Tomcat is also running under Java 7
+
+Use with the SCAPE Loader
+=========================
+It is necessary to compile the Loader (https://github.com/shaibe/loader-app) from source
+
+Change the following line in Loader.java:
+  LoaderApplication loaderapp = new LoaderApplication(conf, new EsciDocAuthentication(conf));
+to
+  LoaderApplication loaderapp = new LoaderApplication(conf);
+
+(the open source version of Lily has no Authentication) then compile with
+  mvn clean package -DskipTests
+
+You can then load a set of METS files using:
+  java -jar loader-app-0.0.1-SNAPSHOT-jar-with-dependencies.jar -d {testfile directory} -u dummy -p dummy -t 1 -r {servlet context}/dc-lily-0.1
+
+Go to {servlet context}/dc-lily-0.1/monitor to monitor the progress of the ingest.
