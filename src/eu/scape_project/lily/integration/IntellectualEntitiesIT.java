@@ -1,7 +1,7 @@
 /**
  *
  */
-package eu.scapeproject.lily.integration;
+package eu.scape_project.lily.integration;
 
 import static org.junit.Assert.assertTrue;
 
@@ -32,7 +32,7 @@ import eu.scapeproject.util.ScapeMarshaller;
  * @author ross king
  *
  */
-public class IntellectualEntityAsyncIT {
+public class IntellectualEntitiesIT {
     private static final String SCAPE_URL = "http://localhost:8080/dc-lily";
 
     private final DefaultHttpClient client = new DefaultHttpClient();
@@ -68,7 +68,7 @@ public class IntellectualEntityAsyncIT {
                 .representations(Arrays.asList(rep))
                 .descriptive(TestUtil.createDCRecord()).build();
 
-        HttpPost post = new HttpPost(SCAPE_URL + "/entity-async");
+        HttpPost post = new HttpPost(SCAPE_URL + "/entity");
 
         ByteArrayOutputStream sink = new ByteArrayOutputStream();
         marshaller.serialize(e, sink);
@@ -78,11 +78,10 @@ public class IntellectualEntityAsyncIT {
         post.releaseConnection();
         assertTrue(resp.getStatusLine().getStatusCode() == 201);
 
-        HttpGet getLifecycleState = new HttpGet(SCAPE_URL + "/lifecycle/" + e.getIdentifier().getValue());
-        resp = client.execute(getLifecycleState);
+        HttpGet getEntity = new HttpGet(SCAPE_URL + "/entity/" + e.getIdentifier().getValue());
+        resp = client.execute(getEntity);
         System.out.println(IOUtils.toString(resp.getEntity().getContent()));
-        getLifecycleState.releaseConnection();
+        getEntity.releaseConnection();
         assertTrue(resp.getStatusLine().getStatusCode() == 200);
     }
 }
-

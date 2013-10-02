@@ -1,4 +1,4 @@
-package eu.scapeproject.lily.resource;
+package eu.scape_project.lily.resource;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,8 +13,8 @@ import javax.ws.rs.core.Response;
 
 import com.google.common.net.HttpHeaders;
 
-import eu.scapeproject.lily.threads.IngestQueue;
-import eu.scapeproject.lily.threads.StateMap;
+import eu.scape_project.lily.threads.IngestQueue;
+import eu.scape_project.lily.threads.StateMap;
 
 /**
  * A REST service that delivers an HTML page at "/monitor"

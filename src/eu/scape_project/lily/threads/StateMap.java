@@ -1,4 +1,4 @@
-package eu.scapeproject.lily.threads;
+package eu.scape_project.lily.threads;
 
 import java.util.ArrayList;
 import java.util.HashMap;

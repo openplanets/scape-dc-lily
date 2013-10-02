@@ -1,4 +1,4 @@
-package eu.scapeproject.lily.resource;
+package eu.scape_project.lily.resource;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,7 +17,7 @@ import org.lilyproject.repository.api.RecordId;
 import org.lilyproject.repository.api.Repository;
 import org.lilyproject.repository.api.RepositoryException;
 
-import eu.scapeproject.lily.threads.StateMap;
+import eu.scape_project.lily.threads.StateMap;
 import eu.scapeproject.model.LifecycleState;
 import eu.scapeproject.model.LifecycleState.State;
 import eu.scapeproject.util.ScapeMarshaller;

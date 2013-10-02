@@ -1,10 +1,10 @@
-package eu.scapeproject.lily.threads;
+package eu.scape_project.lily.threads;
 
 import java.util.Properties;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import eu.scapeproject.lily.resource.ConnectionManager;
+import eu.scape_project.lily.resource.ConnectionManager;
 import eu.scapeproject.model.IntellectualEntity;
 
 public class ReSubmit implements Runnable {

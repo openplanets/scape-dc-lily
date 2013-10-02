@@ -1,4 +1,4 @@
-package eu.scapeproject.lily.resource;
+package eu.scape_project.lily.resource;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package eu.scapeproject.lily.resource;
+package eu.scape_project.lily.resource;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -15,7 +15,7 @@ import org.lilyproject.util.zookeeper.ZkConnectException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.scapeproject.lily.threads.IngestQueue;
+import eu.scape_project.lily.threads.IngestQueue;
 
 /**
  * Initializes the DC-Lily REST Service - obtains the LilyClient and repository

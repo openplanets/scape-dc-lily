@@ -1,4 +1,4 @@
-package eu.scapeproject.lily.resource;
+package eu.scape_project.lily.resource;
 
 import java.io.InputStream;
 
@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.xml.bind.JAXBException;
 
-import eu.scapeproject.lily.threads.IngestQueue;
+import eu.scape_project.lily.threads.IngestQueue;
 import eu.scapeproject.model.Identifier;
 import eu.scapeproject.model.IntellectualEntity;
 import eu.scapeproject.util.ScapeMarshaller;

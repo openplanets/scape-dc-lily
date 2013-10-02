@@ -1,4 +1,4 @@
-package eu.scapeproject.lily.threads;
+package eu.scape_project.lily.threads;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import org.lilyproject.repository.api.RepositoryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.scapeproject.lily.resource.ConnectionManager;
+import eu.scape_project.lily.resource.ConnectionManager;
 import eu.scapeproject.model.BitStream;
 import eu.scapeproject.model.File;
 import eu.scapeproject.model.IntellectualEntity;
