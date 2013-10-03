@@ -6,9 +6,9 @@ jdk:
 before_install:
   - git clone --depth 1 https://github.com/NGDATA/lilyproject.git -b RELEASE_2_0
   - cd lilyproject
-  - mvn clean install -DskipTests=true
+  - mvn clean install -DskipTests=true -am lily-repository-api,lily-client
   - cd ..
-  - git clone --depth 1 https://github.com/openplanets/scape-platform-datamodel.git
+  - git clone --depth 1 https://github.com/openplanets/scape-platform-datamodel.git -b scape-platform-datamodel-0.1.0
   - cd scape-platform-datamodel
   - mvn clean install -DskipTests=true
   - cd ..
