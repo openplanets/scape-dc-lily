@@ -3,7 +3,8 @@ jdk:
   - oraclejdk7
   - openjdk7
 before_install:
-  - git clone --depth 1 https://github.com/openplanets/scape-platform-datamodel.git -b scape-platform-datamodel-0.1.0
+  - git clone https://github.com/openplanets/scape-platform-datamodel.git
   - cd scape-platform-datamodel
+  - git checkout scape-platform-datamodel-0.1.0
   - mvn clean install -DskipTests=true
   - cd ..
