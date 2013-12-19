@@ -2,13 +2,3 @@ language: java
 jdk:
   - oraclejdk7
   - openjdk7
-before_install:
-  - git clone --depth 1 https://github.com/NGDATA/lilyproject.git -b RELEASE_2_0
-  - cd lilyproject
-# just build what we need - lily 2.0 has dependencies not in maven central
-  - mvn clean install -DskipTests=true -pl lily-repository-api,lily-clientcr\repository\api,global\lily-bytes,global\util,cr\process\client,cr\repository\remote-impl,global\zk-util
-  - cd ..
-  - git clone --depth 1 https://github.com/openplanets/scape-platform-datamodel.git -b scape-platform-datamodel-0.1.0
-  - cd scape-platform-datamodel
-  - mvn clean install -DskipTests=true
-  - cd ..

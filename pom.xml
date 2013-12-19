@@ -1,5 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>eu.scape-project</groupId>
+		<artifactId>scape-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.scape-project</groupId>
 	<artifactId>dc-lily</artifactId>
@@ -27,6 +32,32 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<!-- for scape-platform-datamodel snapshot builds when building with travis -->
+	<profiles>
+	  <profile>
+		<id>travisbuild</id>
+		<activation>
+			<!-- active by default so we can get scape parent pom -->
+			<activeByDefault>true</activeByDefault>
+			<property>
+				<name>env.TRAVIS</name>
+				<value>true</value>
+			</property>
+		</activation>
+		  <repositories>
+			<repository>
+			  <id>sonatypesnapshots</id>
+			  <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
+			  <layout>default</layout>
+			  <snapshots>
+				<enabled>true</enabled>
+			  </snapshots>
+			</repository>
+		  </repositories>
+	   </profile>
+	</profiles>
+	
 	<dependencies>
 		<dependency>
 			<groupId>eu.scapeproject.model</groupId>
@@ -84,6 +115,11 @@
 			<id>central</id>
 			<name>Maven Repository Switchboard</name>
 			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+		<repository>
+			<id>lilyproject</id>
+			<name>Lily Maven repository</name>
+			<url>http://lilyproject.org/maven/maven2/deploy/</url>
 		</repository>
 	</repositories>
 </project>
